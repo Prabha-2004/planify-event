@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planify</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo" onclick="showPage('home')">Planify <span>All-in-One Events</span></div>
+    <div class="nav-links">
+      <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+      <a onclick="showPage('services')" id="nav-services">Services</a>
+      <a onclick="showPage('venues')" id="nav-venues">Venues</a>
+      <a onclick="showPage('booking')" id="nav-booking">Book Now</a>
+      <a onclick="showPage('contact')" id="nav-contact">Contact</a>
+      <a onclick="showPage('admin')" id="nav-admin">Admin</a>
+    </div>
+    <button class="btn-nav" onclick="showPage('booking')">Book an Event</button>
+  </nav>
+
+  <!-- ===== HOME PAGE ===== -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-tag">Chennai's Premier Event Platform</div>
+        <h1>One Platform for<br><em>Every Occasion</em></h1>
+        <p>From intimate birthday parties to grand corporate galas — book halls, catering, entertainment and more, all
+          in one seamless experience.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('booking')">Book Your Event</button>
+          <button class="btn-secondary" onclick="showPage('services')">Explore Services</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="num">500+</div>
+            <div class="lbl">Events Hosted</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">48</div>
+            <div class="lbl">Premium Venues</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">98%</div>
+            <div class="lbl">Satisfaction Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">12</div>
+            <div class="lbl">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="services-strip">
+      <div class="strip-item" onclick="openBooking('Hall Booking')">
+        <div class="strip-icon">🏛️</div>
+        <h3>Hall Booking</h3>
+        <p>Premium banquet halls and function rooms for every event size.</p>
+        <span class="strip-arr">Book now →</span>
+      </div>
+      <div class="strip-item" onclick="openBooking('Catering')">
+        <div class="strip-icon">🍽️</div>
+        <h3>Catering Services</h3>
+        <p>Curated menus, live counters, and professional service staff.</p>
+        <span class="strip-arr">Explore menus →</span>
+      </div>
+      <div class="strip-item" onclick="openBooking('Entertainment')">
+        <div class="strip-icon">🎭</div>
+        <h3>Entertainment</h3>
+        <p>Live bands, DJs, performers and complete event production.</p>
+        <span class="strip-arr">View packages →</span>
+      </div>
+      <div class="strip-item" onclick="openBooking('Birthday Party')">
+        <div class="strip-icon">🎂</div>
+        <h3>Birthday Parties</h3>
+        <p>Themed decorations, cakes, games, and complete party packages.</p>
+        <span class="strip-arr">Plan now →</span>
+      </div>
+      <div class="strip-item" onclick="openBooking('Corporate Event')">
+        <div class="strip-icon">💼</div>
+        <h3>Corporate Events</h3>
+        <p>Office parties, team dinners, award nights and conferences.</p>
+        <span class="strip-arr">Get quote →</span>
+      </div>
+      <div class="strip-item" onclick="openBooking('Wedding')">
+        <div class="strip-icon">💍</div>
+        <h3>Weddings</h3>
+        <p>Full wedding management from décor to catering to entertainment.</p>
+        <span class="strip-arr">Plan wedding →</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Featured Packages</div>
+      <h2 class="section-title">Popular Event Packages</h2>
+      <p class="section-sub">Handpicked packages that combine the best venues, catering, and entertainment at great
+        value.</p>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-thumb wedding"><span>💍</span><span class="event-badge">PREMIUM</span></div>
+          <div class="event-body">
+            <h3>Royal Wedding Package</h3>
+            <p>Grand venue, full catering, floral décor, live music, photography.</p>
+            <div class="event-meta">
+              <span class="event-price">From ₹1,25,000</span>
+              <button class="btn-book" onclick="openBooking('Wedding')">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-thumb corp"><span>💼</span><span class="event-badge">B2B</span></div>
+          <div class="event-body">
+            <h3>Corporate Gala Night</h3>
+            <p>Conference room + banquet, A/V setup, buffet dinner, DJ.</p>
+            <div class="event-meta">
+              <span class="event-price">From ₹37,500</span>
+              <button class="btn-book" onclick="openBooking('Corporate Event')">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-thumb bday"><span>🎂</span><span class="event-badge">POPULAR</span></div>
+          <div class="event-body">
+            <h3>Dream Birthday Package</h3>
+            <p>Themed décor, custom cake, 3-hour party hall, catering for 50.</p>
+            <div class="event-meta">
+              <span class="event-price">From ₹9,000</span>
+              <button class="btn-book" onclick="openBooking('Birthday Party')">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-thumb hall"><span>🏛️</span><span class="event-badge">FLEXIBLE</span></div>
+          <div class="event-body">
+            <h3>Hall-Only Booking</h3>
+            <p>Book just the venue — your choice of setup and timings.</p>
+            <div class="event-meta">
+              <span class="event-price">From ₹4,000/day</span>
+              <button class="btn-book" onclick="openBooking('Hall Booking')">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-thumb cater"><span>🍽️</span><span class="event-badge">ADD-ON</span></div>
+          <div class="event-body">
+            <h3>Catering Only</h3>
+            <p>Per-head pricing. Veg, non-veg, multi-cuisine options. Servers included.</p>
+            <div class="event-meta">
+              <span class="event-price">From ₹225/person</span>
+              <button class="btn-book" onclick="openBooking('Catering')">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-thumb entertain"><span>🎭</span><span class="event-badge">LIVE</span></div>
+          <div class="event-body">
+            <h3>Entertainment Bundle</h3>
+            <p>DJ, anchor, light show, sound system. Perfect for any event.</p>
+            <div class="event-meta">
+              <span class="event-price">From ₹12,500</span>
+              <button class="btn-book" onclick="openBooking('Entertainment')">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Planify</span>
+          <p>Chennai's most trusted all-in-one event management platform. Making every occasion extraordinary.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a onclick="openBooking('Hall Booking')">Hall Booking</a>
+          <a onclick="openBooking('Catering')">Catering</a>
+          <a onclick="openBooking('Entertainment')">Entertainment</a>
+          <a onclick="openBooking('Wedding')">Weddings</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a onclick="showPage('services')">About Us</a>
+          <a onclick="showPage('venues')">Our Venues</a>
+          <a onclick="showPage('contact')">Contact</a>
+          <a onclick="showPage('admin')">Admin Login</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a>📞 +91 98765 43210</a>
+          <a>✉️ hello@eventura.in</a>
+          <a>📍 Anna Nagar, Chennai</a>
+          <a>🕐 9am–9pm daily</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Eventura. All rights reserved.</span>
+        <span>Privacy Policy · Terms of Service</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== SERVICES PAGE ===== -->
+  <div id="page-services" class="page">
+    <div class="page-hero">
+      <div class="section-label">What We Offer</div>
+      <h1>All Your Event Needs, <em style="color:var(--gold)">Under One Roof</em></h1>
+      <p>Six core services, fully customisable, with transparent pricing and seamless booking.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="openBooking('Hall Booking')">
+        <div class="svc-icon svc-purple">🏛️</div>
+        <h3>Hall & Venue Booking</h3>
+        <p>Browse our premium portfolio of banquet halls, function rooms, and outdoor spaces. Choose your layout,
+          capacity, and duration.</p>
+        <ul class="svc-features">
+          <li>Capacity from 20 to 2000 guests</li>
+          <li>AC & non-AC options</li>
+          <li>Stage, PA system, projector</li>
+          <li>Parking & valet service</li>
+          <li>Real-time availability calendar</li>
+        </ul>
+        <div class="svc-price">Starting from <strong>₹4,000/day</strong></div>
+      </div>
+      <div class="service-card" onclick="openBooking('Entertainment')">
+        <div class="svc-icon svc-teal">🎭</div>
+        <h3>Entertainment & Events</h3>
+        <p>From corporate shows to cultural performances — we handle complete event production with professional talent
+          and crew.</p>
+        <ul class="svc-features">
+          <li>Live bands & DJ packages</li>
+          <li>Anchor & MC services</li>
+          <li>Light & sound production</li>
+          <li>Cultural performances</li>
+          <li>Photo & video coverage</li>
+        </ul>
+        <div class="svc-price">Starting from <strong>₹6,000/event</strong></div>
+      </div>
+      <div class="service-card" onclick="openBooking('Catering')">
+        <div class="svc-icon svc-amber">🍽️</div>
+        <h3>Catering Services</h3>
+        <p>Delicious multi-cuisine catering with professional service staff. Custom menus for every dietary need.</p>
+        <ul class="svc-features">
+          <li>South Indian, North Indian, Chinese</li>
+          <li>Veg, non-veg, Jain options</li>
+          <li>Live counters & buffet</li>
+          <li>Professional service staff</li>
+          <li>Crockery & cutlery included</li>
+        </ul>
+        <div class="svc-price">Starting from <strong>₹225/person</strong></div>
+      </div>
+      <div class="service-card" onclick="openBooking('Birthday Party')">
+        <div class="svc-icon svc-red">🎂</div>
+        <h3>Birthday Parties</h3>
+        <p>Complete themed birthday experiences for kids and adults. Every detail handled so you can enjoy the moment.
+        </p>
+        <ul class="svc-features">
+          <li>Theme decoration & balloons</li>
+          <li>Custom cake arrangement</li>
+          <li>Kids' games & activities</li>
+          <li>Party favors & return gifts</li>
+          <li>Photography package</li>
+        </ul>
+        <div class="svc-price">Starting from <strong>₹7,500/party</strong></div>
+      </div>
+      <div class="service-card" onclick="openBooking('Corporate Event')">
+        <div class="svc-icon svc-blue">💼</div>
+        <h3>Corporate Occasions</h3>
+        <p>Professional corporate event management — team events, annual dinners, award nights, and product launches.
+        </p>
+        <ul class="svc-features">
+          <li>Conference setup & A/V</li>
+          <li>Award night production</li>
+          <li>Team building activities</li>
+          <li>GST invoicing for companies</li>
+          <li>Dedicated event coordinator</li>
+        </ul>
+        <div class="svc-price">Starting from <strong>₹25,000/event</strong></div>
+      </div>
+      <div class="service-card" onclick="openBooking('Wedding')">
+        <div class="svc-icon svc-purple">💍</div>
+        <h3>Weddings & Milestones</h3>
+        <p>Full wedding management — from mehendi to reception. Floral, catering, entertainment, and coordination all in
+          one team.</p>
+        <ul class="svc-features">
+          <li>Full event coordination</li>
+          <li>Floral & décor design</li>
+          <li>Bridal & groom packages</li>
+          <li>Catering for all ceremonies</li>
+          <li>Photography & videography</li>
+        </ul>
+        <div class="svc-price">Starting from <strong>₹75,000</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== VENUES PAGE ===== -->
+  <div id="page-venues" class="page">
+    <div class="page-hero">
+      <div class="section-label">Our Venues</div>
+      <h1>48 Premium Spaces <em style="color:var(--gold)">Across Chennai</em></h1>
+      <p>From intimate rooms for 20 to grand halls for 2000 — find the perfect venue for your event.</p>
+    </div>
+    <div class="venues-filters">
+      <button class="filter-btn active" onclick="filterVenue(this,'all')">All Venues</button>
+      <button class="filter-btn" onclick="filterVenue(this,'banquet')">Banquet Halls</button>
+      <button class="filter-btn" onclick="filterVenue(this,'outdoor')">Outdoor</button>
+      <button class="filter-btn" onclick="filterVenue(this,'conference')">Conference</button>
+      <button class="filter-btn" onclick="filterVenue(this,'rooftop')">Rooftop</button>
+    </div>
+    <div class="venues-grid">
+      <div class="venue-card" data-type="banquet">
+        <div class="venue-img v1"><span>🏛️</span><span class="venue-cap">👥 500 guests</span></div>
+        <div class="venue-body">
+          <h3>The Grand Pavilion</h3>
+          <div class="venue-loc">📍 Anna Nagar, Chennai</div>
+          <div class="venue-tags"><span class="venue-tag">Banquet</span><span class="venue-tag">AC</span><span
+              class="venue-tag">Stage</span><span class="venue-tag">Parking</span></div>
+          <div class="venue-foot"><span class="venue-rate">₹17,500/day</span><button class="btn-book"
+              onclick="openBooking('Hall Booking')">Book</button></div>
+        </div>
+      </div>
+      <div class="venue-card" data-type="outdoor">
+        <div class="venue-img v2"><span>🌿</span><span class="venue-cap">👥 1000 guests</span></div>
+        <div class="venue-body">
+          <h3>Garden of Eden</h3>
+          <div class="venue-loc">📍 Adyar, Chennai</div>
+          <div class="venue-tags"><span class="venue-tag">Outdoor</span><span class="venue-tag">Lawn</span><span
+              class="venue-tag">Valet</span></div>
+          <div class="venue-foot"><span class="venue-rate">₹27,500/day</span><button class="btn-book"
+              onclick="openBooking('Hall Booking')">Book</button></div>
+        </div>
+      </div>
+      <div class="venue-card" data-type="conference">
+        <div class="venue-img v3"><span>💼</span><span class="venue-cap">👥 80 guests</span></div>
+        <div class="venue-body">
+          <h3>Executive Board Room</h3>
+          <div class="venue-loc">📍 T.Nagar, Chennai</div>
+          <div class="venue-tags"><span class="venue-tag">Conference</span><span class="venue-tag">Projector</span><span
+              class="venue-tag">Wi-Fi</span></div>
+          <div class="venue-foot"><span class="venue-rate">₹6,000/day</span><button class="btn-book"
+              onclick="openBooking('Hall Booking')">Book</button></div>
+        </div>
+      </div>
+      <div class="venue-card" data-type="rooftop">
+        <div class="venue-img v4"><span>🌙</span><span class="venue-cap">👥 200 guests</span></div>
+        <div class="venue-body">
+          <h3>Skyline Terrace</h3>
+          <div class="venue-loc">📍 Nungambakkam, Chennai</div>
+          <div class="venue-tags"><span class="venue-tag">Rooftop</span><span class="venue-tag">City View</span><span
+              class="venue-tag">Bar</span></div>
+          <div class="venue-foot"><span class="venue-rate">₹14,000/day</span><button class="btn-book"
+              onclick="openBooking('Hall Booking')">Book</button></div>
+        </div>
+      </div>
+      <div class="venue-card" data-type="banquet">
+        <div class="venue-img v5"><span>✨</span><span class="venue-cap">👥 300 guests</span></div>
+        <div class="venue-body">
+          <h3>Crystal Ballroom</h3>
+          <div class="venue-loc">📍 Velachery, Chennai</div>
+          <div class="venue-tags"><span class="venue-tag">Banquet</span><span class="venue-tag">Chandeliers</span><span
+              class="venue-tag">AC</span></div>
+          <div class="venue-foot"><span class="venue-rate">₹12,500/day</span><button class="btn-book"
+              onclick="openBooking('Hall Booking')">Book</button></div>
+        </div>
+      </div>
+      <div class="venue-card" data-type="outdoor">
+        <div class="venue-img v6"><span>🌸</span><span class="venue-cap">👥 2000 guests</span></div>
+        <div class="venue-body">
+          <h3>Heritage Palace Grounds</h3>
+          <div class="venue-loc">📍 Guindy, Chennai</div>
+          <div class="venue-tags"><span class="venue-tag">Outdoor</span><span class="venue-tag">Heritage</span><span
+              class="venue-tag">Grand</span></div>
+          <div class="venue-foot"><span class="venue-rate">₹60,000/day</span><button class="btn-book"
+              onclick="openBooking('Hall Booking')">Book</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BOOKING PAGE ===== -->
+  <div id="page-booking" class="page">
+    <div class="page-hero">
+      <div class="section-label">Booking</div>
+      <h1>Book Your <em style="color:var(--gold)">Perfect Event</em></h1>
+      <p>Complete the steps below and our team will confirm within 2 hours.</p>
+    </div>
+
+    <div id="booking-form-area">
+      <div class="booking-layout">
+        <div class="booking-form-wrap">
+          <div class="step-bar">
+            <div class="step-dot active" id="sd1">1</div>
+            <div class="step-line" id="sl1"></div>
+            <div class="step-dot" id="sd2">2</div>
+            <div class="step-line" id="sl2"></div>
+            <div class="step-dot" id="sd3">3</div>
+            <div class="step-line" id="sl3"></div>
+            <div class="step-dot" id="sd4">4</div>
+          </div>
+
+          <!-- Step 1: Event Details -->
+          <div class="form-step active" id="step1">
+            <h2>Event Details</h2>
+            <p>Tell us about your event</p>
+            <br>
+            <div class="form-group">
+              <label>Event Type</label>
+              <div class="radio-group">
+                <label class="radio-card selected" onclick="selectRadio(this,'Wedding')">
+                  <div class="rc-icon">💍</div>
+                  <div class="rc-label">Wedding</div>
+                </label>
+                <label class="radio-card" onclick="selectRadio(this,'Birthday Party')">
+                  <div class="rc-icon">🎂</div>
+                  <div class="rc-label">Birthday</div>
+                </label>
+                <label class="radio-card" onclick="selectRadio(this,'Corporate Event')">
+                  <div class="rc-icon">💼</div>
+                  <div class="rc-label">Corporate</div>
+                </label>
+                <label class="radio-card" onclick="selectRadio(this,'Entertainment')">
+                  <div class="rc-icon">🎭</div>
+                  <div class="rc-label">Entertainment</div>
+                </label>
+                <label class="radio-card" onclick="selectRadio(this,'Catering')">
+                  <div class="rc-icon">🍽️</div>
+                  <div class="rc-label">Catering</div>
+                </label>
+                <label class="radio-card" onclick="selectRadio(this,'Hall Booking')">
+                  <div class="rc-icon">🏛️</div>
+                  <div class="rc-label">Hall Only</div>
+                </label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Event Date</label>
+                <input type="date" id="event-date" min="">
+              </div>
+              <div class="form-group">
+                <label>Number of Guests</label>
+                <input type="number" id="guests" placeholder="e.g. 150" min="1">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Start Time</label>
+                <input type="time" id="start-time" value="10:00">
+              </div>
+              <div class="form-group">
+                <label>Duration</label>
+                <select id="duration">
+                  <option>4 hours</option>
+                  <option>6 hours</option>
+                  <option selected>8 hours</option>
+                  <option>Full day</option>
+                  <option>2 days</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Special Requirements</label>
+              <textarea id="requirements" placeholder="Vegetarian menu, wheelchair access, outdoor setup..."></textarea>
+            </div>
+            <div class="form-nav">
+              <span></span>
+              <button class="btn-primary" onclick="nextStep(2)">Next: Choose Venue →</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Venue & Add-ons -->
+          <div class="form-step" id="step2">
+            <h2>Venue & Add-ons</h2>
+            <p>Choose your space and services</p>
+            <br>
+            <div class="form-group">
+              <label>Preferred Venue</label>
+              <select id="venue-select" onchange="updateSummary()">
+                <option value="17500">The Grand Pavilion — Anna Nagar (₹17,500)</option>
+                <option value="12500">Crystal Ballroom — Velachery (₹12,500)</option>
+                <option value="27500">Garden of Eden — Adyar (₹27,500)</option>
+                <option value="6000">Executive Board Room — T.Nagar (₹6,000)</option>
+                <option value="14000">Skyline Terrace — Nungambakkam (₹14,000)</option>
+                <option value="60000">Heritage Palace — Guindy (₹60,000)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Add-on Services</label>
+              <div style="display:flex;flex-direction:column;gap:.6rem;">
+                <label
+                  style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:var(--text-muted)">
+                  <input type="checkbox" onchange="updateSummary()" id="addon-catering"> Catering (₹225/person)
+                </label>
+                <label
+                  style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:var(--text-muted)">
+                  <input type="checkbox" onchange="updateSummary()" id="addon-music"> DJ & Music (₹7,500)
+                </label>
+                <label
+                  style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:var(--text-muted)">
+                  <input type="checkbox" onchange="updateSummary()" id="addon-deco"> Decoration (₹6,000)
+                </label>
+                <label
+                  style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:var(--text-muted)">
+                  <input type="checkbox" onchange="updateSummary()" id="addon-photo"> Photography (₹10,000)
+                </label>
+                <label
+                  style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:var(--text-muted)">
+                  <input type="checkbox" onchange="updateSummary()" id="addon-anchor"> Anchor / MC (₹4,000)
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date — Availability</label>
+              <div style="background:var(--surface2);border-radius:10px;padding:1rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;">
+                  <span style="font-size:.88rem;font-weight:500;">June 2025</span>
+                  <div style="display:flex;gap:.4rem;">
+                    <button
+                      style="background:none;border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);width:28px;height:28px;border-radius:6px;cursor:pointer;">‹</button>
+                    <button
+                      style="background:none;border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);width:28px;height:28px;border-radius:6px;cursor:pointer;">›</button>
+                  </div>
+                </div>
+                <div class="cal-header">
+                  <div class="cal-h">Su</div>
+                  <div class="cal-h">Mo</div>
+                  <div class="cal-h">Tu</div>
+                  <div class="cal-h">We</div>
+                  <div class="cal-h">Th</div>
+                  <div class="cal-h">Fr</div>
+                  <div class="cal-h">Sa</div>
+                </div>
+                <div class="calendar-grid" id="cal-grid"></div>
+                <div style="display:flex;gap:1rem;margin-top:.75rem;font-size:.75rem;color:var(--text-muted);">
+                  <span><span style="color:var(--accent)">●</span> Booked</span>
+                  <span><span style="color:var(--gold)">●</span> Selected</span>
+                  <span><span style="color:var(--text-muted)">●</span> Available</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-nav">
+              <button class="btn-ghost" onclick="nextStep(1)">← Back</button>
+              <button class="btn-primary" onclick="nextStep(3)">Next: Your Details →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact Details -->
+          <div class="form-step" id="step3">
+            <h2>Your Details</h2>
+            <p>How can we reach you?</p>
+            <br>
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="fname" placeholder="Priya">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="lname" placeholder="Sharma">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="email" placeholder="priya@email.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group">
+              <label>Organisation (for corporate events)</label>
+              <input type="text" id="org" placeholder="Company name (optional)">
+            </div>
+            <div class="form-group">
+              <label>How did you hear about us?</label>
+              <select>
+                <option>Google Search</option>
+                <option>Friend / Referral</option>
+                <option>Instagram</option>
+                <option>Previous customer</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-nav">
+              <button class="btn-ghost" onclick="nextStep(2)">← Back</button>
+              <button class="btn-primary" onclick="nextStep(4)">Next: Payment →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Payment -->
+          <div class="form-step" id="step4">
+            <h2>Payment</h2>
+            <p>Secure checkout — 30% advance to confirm booking</p>
+            <br>
+            <div class="payment-methods">
+              <div class="pay-method active" onclick="selectPayMethod(this)">💳 Card</div>
+              <div class="pay-method" onclick="selectPayMethod(this)">📱 UPI</div>
+              <div class="pay-method" onclick="selectPayMethod(this)">🏦 Net Banking</div>
+            </div>
+            <div id="card-fields">
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+              </div>
+              <div class="card-grid">
+                <div class="form-group">
+                  <label>Expiry</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" placeholder="•••" maxlength="3">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Name on Card</label>
+                <input type="text" placeholder="PRIYA SHARMA">
+              </div>
+            </div>
+            <div id="upi-fields" style="display:none;">
+              <div class="form-group">
+                <label>UPI ID</label>
+                <input type="text" placeholder="yourname@paytm">
+              </div>
+            </div>
+            <div id="nb-fields" style="display:none;">
+              <div class="form-group">
+                <label>Select Bank</label>
+                <select>
+                  <option>SBI</option>
+                  <option>HDFC</option>
+                  <option>ICICI</option>
+                  <option>Axis</option>
+                  <option>Kotak</option>
+                </select>
+              </div>
+            </div>
+            <div
+              style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:1rem;font-size:.85rem;color:var(--text-muted);margin-top:1rem;">
+              🔒 Your payment is secured with 256-bit SSL encryption. We charge only the advance amount now; remaining
+              is due on the event day.
+            </div>
+            <div class="form-nav">
+              <button class="btn-ghost" onclick="nextStep(3)">← Back</button>
+              <button class="btn-primary" onclick="confirmBooking()">Confirm & Pay →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUMMARY PANEL -->
+        <div class="booking-summary" id="summary-panel">
+          <h3>Booking Summary</h3>
+          <div class="summary-row"><span class="lbl">Event Type</span><span class="val" id="sum-type">Wedding</span>
+          </div>
+          <div class="summary-row"><span class="lbl">Venue</span><span class="val" id="sum-venue">The Grand
+              Pavilion</span></div>
+          <div class="summary-row"><span class="lbl">Date</span><span class="val" id="sum-date">—</span></div>
+          <div class="summary-row"><span class="lbl">Guests</span><span class="val" id="sum-guests">—</span></div>
+          <div class="summary-row"><span class="lbl">Duration</span><span class="val" id="sum-duration">8 hours</span>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,0.08);margin:1rem 0;padding-top:1rem;">
+            <div class="summary-row"><span class="lbl">Venue cost</span><span class="val"
+                id="sum-venue-cost">₹35,000</span></div>
+            <div class="summary-row" id="sum-addon-catering" style="display:none;"><span
+                class="lbl">Catering</span><span class="val" id="sum-catering-val">₹0</span></div>
+            <div class="summary-row" id="sum-addon-music" style="display:none;"><span class="lbl">DJ & Music</span><span
+                class="val">₹15,000</span></div>
+            <div class="summary-row" id="sum-addon-deco" style="display:none;"><span class="lbl">Decoration</span><span
+                class="val">₹12,000</span></div>
+            <div class="summary-row" id="sum-addon-photo" style="display:none;"><span
+                class="lbl">Photography</span><span class="val">₹20,000</span></div>
+            <div class="summary-row" id="sum-addon-anchor" style="display:none;"><span class="lbl">Anchor/MC</span><span
+                class="val">₹8,000</span></div>
+          </div>
+          <div class="summary-total">
+            <span class="lbl">Total</span>
+            <span class="val" id="sum-total">₹35,000</span>
+          </div>
+          <div class="summary-total" style="margin-top:.5rem;">
+            <span class="lbl" style="font-size:.85rem;color:var(--text-muted);">30% Advance</span>
+            <span style="color:var(--teal);font-size:1rem;font-weight:600;" id="sum-advance">₹10,500</span>
+          </div>
+          <button class="btn-primary" style="width:100%;margin-top:1.5rem;" onclick="confirmBooking()">Confirm
+            Booking</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS SCREEN -->
+    <div id="booking-success" style="display:none;">
+      <div class="success-screen">
+        <div class="check-circle">✓</div>
+        <h2>Booking Confirmed!</h2>
+        <p>Thank you! Your event has been successfully booked.</p>
+        <p>Our coordinator will call you within 2 hours to finalise the details.</p>
+        <div class="booking-ref">
+          <div class="ref-label">Booking Reference</div>
+          <div class="ref-num" id="ref-num">EVT-2025-0001</div>
+        </div>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
+          <button class="btn-primary" onclick="showPage('home')">Back to Home</button>
+          <button class="btn-secondary" onclick="resetBooking()">Book Another Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT PAGE ===== -->
+  <div id="page-contact" class="page">
+    <div class="page-hero">
+      <div class="section-label">Get In Touch</div>
+      <h1>We'd Love to <em style="color:var(--gold)">Hear From You</em></h1>
+      <p>Have a question? Want to discuss a custom event? Our team is here to help.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h2>Let's Plan Something Extraordinary</h2>
+        <p>Reach out to our team and we'll help you create the perfect event from scratch — no question is too big or
+          too small.</p>
+        <div class="contact-detail">
+          <div class="icon">📞</div>
+          <div class="cd-text"><strong>Phone</strong><span>+91 98765 43210 (9am–9pm)</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">✉️</div>
+          <div class="cd-text"><strong>Email</strong><span>hello@eventura.in</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">📍</div>
+          <div class="cd-text"><strong>Office</strong><span>42, 4th Avenue, Anna Nagar,<br>Chennai — 600 040</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">🕐</div>
+          <div class="cd-text"><strong>Hours</strong><span>Monday–Sunday, 9am–9pm</span></div>
+        </div>
+        <div
+          style="margin-top:2rem;background:var(--surface);border:1px solid rgba(201,168,76,0.2);border-radius:var(--radius-lg);padding:1.5rem;">
+          <h4 style="margin-bottom:.5rem;">Emergency / Last-minute bookings?</h4>
+          <p style="font-size:.88rem;color:var(--text-muted);line-height:1.6;">Call our 24/7 hotline: <strong
+              style="color:var(--gold)">+91 98000 12345</strong></p>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3 style="margin-bottom:1.5rem;font-size:1.3rem;">Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Name</label><input type="text" id="contact-name" placeholder="Your name"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" id="contact-phone" placeholder="+91"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" id="contact-email" placeholder="you@email.com"></div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select id="contact-subject">
+            <option>General Enquiry</option>
+            <option>Booking Help</option>
+            <option>Corporate Quote</option>
+            <option>Wedding Planning</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea id="contact-message" placeholder="Tell us about your event or question..."
+            style="min-height:120px;"></textarea></div>
+        <button class="btn-primary" id="contact-submit-btn" style="width:100%;"
+          onclick="sendContactMessage()">Send Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN PAGE ===== -->
+  <div id="page-admin" class="page">
+    <div class="admin-layout">
+      <div class="admin-sidebar">
+        <div style="padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:.5rem;">
+          <div
+            style="font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:.3rem;">
+            Admin Panel</div>
+          <div style="font-weight:600;font-size:.95rem;">Eventura HQ</div>
+        </div>
+        <div class="admin-menu-item active" onclick="showAdminSection('dashboard', this)">📊 Dashboard</div>
+        <div class="admin-menu-item" onclick="showAdminSection('bookings', this)">📋 Bookings</div>
+        <div class="admin-menu-item" onclick="showAdminSection('calendar', this)">📅 Calendar</div>
+        <div class="admin-menu-item" onclick="showAdminSection('venues', this)">🏛️ Venues</div>
+        <div class="admin-menu-item" onclick="showAdminSection('customers', this)">👥 Customers</div>
+        <div style="margin-top:auto;padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,0.06);margin-top:2rem;">
+          <div style="font-size:.8rem;color:var(--text-dim);">Logged in as</div>
+          <div style="font-size:.88rem;font-weight:500;margin-top:2px;">Admin User</div>
+        </div>
+      </div>
+
+      <div class="admin-content">
+        <!-- DASHBOARD -->
+        <div class="admin-section active" id="admin-dashboard">
+          <h2 style="font-size:1.8rem;margin-bottom:.3rem;">Good morning 👋</h2>
+          <p style="color:var(--text-muted);margin-bottom:1.75rem;font-size:.9rem;">Here's what's happening with your
+            events today.</p>
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="s-label">Total Bookings</div>
+              <div class="s-val">142</div>
+              <div class="s-sub">↑ 12% this month</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Revenue (June)</div>
+              <div class="s-val">₹8.4L</div>
+              <div class="s-sub">↑ 18% vs last month</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Upcoming Events</div>
+              <div class="s-val">28</div>
+              <div class="s-sub">Next 30 days</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Satisfaction</div>
+              <div class="s-val">98%</div>
+              <div class="s-sub">Based on 89 reviews</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <div class="table-head">
+              <h3>Recent Bookings</h3><button class="btn-book"
+                onclick="showAdminSection('bookings', document.querySelector('.admin-menu-item:nth-child(3)'))">View
+                All</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ref</th>
+                  <th>Customer</th>
+                  <th>Event</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="admin-dashboard-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- BOOKINGS -->
+        <div class="admin-section" id="admin-bookings">
+          <h2 style="font-size:1.8rem;margin-bottom:1.5rem;">All Bookings</h2>
+          <div style="display:flex;gap:.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn"
+              onclick="this.parentElement.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Confirmed</button>
+            <button class="filter-btn"
+              onclick="this.parentElement.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Pending</button>
+            <button class="filter-btn"
+              onclick="this.parentElement.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Cancelled</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ref</th>
+                  <th>Customer</th>
+                  <th>Event</th>
+                  <th>Venue</th>
+                  <th>Date</th>
+                  <th>Guests</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-bookings-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- CALENDAR -->
+        <div class="admin-section" id="admin-calendar">
+          <h2 style="font-size:1.8rem;margin-bottom:1.5rem;">Event Calendar</h2>
+          <div
+            style="background:var(--surface);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius-lg);padding:1.5rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+              <h3 style="font-size:1.2rem;">June 2025</h3>
+              <div style="display:flex;gap:.5rem;">
+                <button class="btn-ghost" style="padding:7px 14px;font-size:.85rem;">‹ Prev</button>
+                <button class="btn-ghost" style="padding:7px 14px;font-size:.85rem;">Next ›</button>
+              </div>
+            </div>
+            <div class="cal-header" style="margin-bottom:.5rem;">
+              <div class="cal-h">Sunday</div>
+              <div class="cal-h">Monday</div>
+              <div class="cal-h">Tuesday</div>
+              <div class="cal-h">Wednesday</div>
+              <div class="cal-h">Thursday</div>
+              <div class="cal-h">Friday</div>
+              <div class="cal-h">Saturday</div>
+            </div>
+            <div id="admin-cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;"></div>
+          </div>
+        </div>
+
+        <!-- VENUES ADMIN -->
+        <div class="admin-section" id="admin-venues">
+          <h2 style="font-size:1.8rem;margin-bottom:1.5rem;">Venue Management</h2>
+          <div class="stats-row" style="grid-template-columns:repeat(3,1fr);">
+            <div class="stat-card">
+              <div class="s-label">Total Venues</div>
+              <div class="s-val">48</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Available Today</div>
+              <div class="s-val">34</div>
+              <div class="s-sub">71% availability</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Booked Today</div>
+              <div class="s-val">14</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Venue</th>
+                  <th>Location</th>
+                  <th>Capacity</th>
+                  <th>Rate/Day</th>
+                  <th>Status</th>
+                  <th>Bookings (Jun)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>The Grand Pavilion</td>
+                  <td>Anna Nagar</td>
+                  <td>500</td>
+                  <td>₹35,000</td>
+                  <td><span class="status-badge status-confirmed">Available</span></td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>Crystal Ballroom</td>
+                  <td>Velachery</td>
+                  <td>300</td>
+                  <td>₹25,000</td>
+                  <td><span class="status-badge status-pending">Booked</span></td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>Garden of Eden</td>
+                  <td>Adyar</td>
+                  <td>1000</td>
+                  <td>₹55,000</td>
+                  <td><span class="status-badge status-confirmed">Available</span></td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Executive Board Room</td>
+                  <td>T.Nagar</td>
+                  <td>80</td>
+                  <td>₹12,000</td>
+                  <td><span class="status-badge status-confirmed">Available</span></td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>Skyline Terrace</td>
+                  <td>Nungambakkam</td>
+                  <td>200</td>
+                  <td>₹28,000</td>
+                  <td><span class="status-badge status-pending">Booked</span></td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- CUSTOMERS -->
+        <div class="admin-section" id="admin-customers">
+          <h2 style="font-size:1.8rem;margin-bottom:1.5rem;">Customers</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Events Booked</th>
+                  <th>Total Spent</th>
+                  <th>Last Booking</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Meera Krishnan</td>
+                  <td>meera@email.com</td>
+                  <td>+91 98001 11111</td>
+                  <td>3</td>
+                  <td>₹3,45,000</td>
+                  <td>Jun 14, 2025</td>
+                </tr>
+                <tr>
+                  <td>Rajesh Kumar</td>
+                  <td>rajesh@corp.in</td>
+                  <td>+91 98002 22222</td>
+                  <td>7</td>
+                  <td>₹6,80,000</td>
+                  <td>Jun 12, 2025</td>
+                </tr>
+                <tr>
+                  <td>Sunita Patel</td>
+                  <td>sunita@email.com</td>
+                  <td>+91 98003 33333</td>
+                  <td>2</td>
+                  <td>₹40,000</td>
+                  <td>Jun 10, 2025</td>
+                </tr>
+                <tr>
+                  <td>Arjun Reddy</td>
+                  <td>arjun@email.com</td>
+                  <td>+91 98004 44444</td>
+                  <td>4</td>
+                  <td>₹1,25,000</td>
+                  <td>Jun 8, 2025</td>
+                </tr>
+                <tr>
+                  <td>Karthik Rajan</td>
+                  <td>karthik@email.com</td>
+                  <td>+91 98005 55555</td>
+                  <td>1</td>
+                  <td>₹45,000</td>
+                  <td>Jun 5, 2025</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✓ Action completed</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
